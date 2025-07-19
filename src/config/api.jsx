@@ -1,0 +1,1 @@
+export default api = "https://680167ea81c7e9fbcc427768.mockapi.io/tableUsers"
