@@ -121,7 +121,7 @@ const App = () => {
     get()
   }, [])
   return (
-    <>
+    <div className="dark:bg-black">
       <div className="dark:bg-black pb-[50px] dark:text-white relative">
         {openAdd && (
           <>
@@ -177,9 +177,9 @@ const App = () => {
             </div>
           </>
         )}
-        <div className="flex pt-[20px] lg:justify-between gap-[5px] lg:flex-row flex-col px-[20px] lg:px-[155px] lg:items-center items-start">
+        <div className="flex pt-[20px] lg:justify-between gap-[5px] lg:flex-row flex-col px-[20px] lg:px-[155px] lg:items-center">
           <CustomizedSwitches toggleTheme={toggleTheme} />
-          <div className="flex gap-[5px] items-center">
+          <div className="flex lg:flex-row flex-col gap-[10px] lg:gap-[5px] lg:items-center">
             <button onClick={() => openAddFunc()} className="bg-blue-500 py-[5px] text-white rounded-[5px] px-[10px]">New</button>
             <input className="border border-gray-300 px-[10px] py-[5px] rounded-[5px] bg-gray-100 dark:bg-gray-500" value={search} onChange={(e) => setSearch(e.target.value)} type="search" placeholder="Search..." />
             <select className="border border-gray-300 px-[10px] py-[6px] rounded-[5px] bg-gray-100 dark:bg-gray-500" value={select} onChange={(e) => setSelect(e.target.value)} name="" id="">
@@ -190,14 +190,14 @@ const App = () => {
           </div>
         </div>
         <div className="mt-[40px]">
-          <h1 className="px-[160px] text-[25px] font-bold">Users</h1>
+          <h1 className="text-center text-[25px] font-bold">Users</h1>
           <div className="flex flex-wrap justify-center lg:flex-row gap-[20px] mt-[20px] lg:px-[0px] px-[20px] flex-col">
             {data
               .filter((e) => e.name.toLowerCase().trim().includes(search.toLowerCase().trim()))
               .filter((e) => e.status.toString().includes(select))
               .map((e) => {
                 return (
-                  <article className="dark:bg-gray-500 bg-blue-300 text-white flex flex-col w-[100%] lg:w-[25%] items-start py-[20px] rounded-[10px] px-[30px] gap-[20px]" key={e.id}>
+                  <article className="dark:bg-gray-500 bg-blue-300 text-white flex flex-col w-[100%] lg:w-[30%] items-start py-[20px] rounded-[10px] px-[20px] lg:px-[30px] gap-[20px]" key={e.id}>
                     <div className="flex gap-[5px] items-center font-bold">
                       <h1 className="text-[22px] lg:text-[25px]">{e.name}</h1>
                       <h1 className="text-[14px] relative top-[2px] lg:top-[3px] lg:text-[14px]">{e.surname}</h1>
@@ -219,7 +219,7 @@ const App = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
